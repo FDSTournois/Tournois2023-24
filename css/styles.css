@@ -29,7 +29,7 @@ a.nav-link{
 .carousel{
       
     margin-top:10px;
-    
+    padding:0;
     }
 .carousel-caption{
        font-weight:bolder;
@@ -43,10 +43,10 @@ img{
     
     }
 .uptoclick{
-       border: 10px inset #000033;
+       border: 10px inset white;
     }
 .downtoclick{
-       border: 10px outset #000033;
+       border: 10px outset white;
     }
 
 
