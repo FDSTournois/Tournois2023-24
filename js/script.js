@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded",
   e.async = true;
   e.type = 'text/javascript';
   d.head.appendChild(e);
+      console.log(e);
     document.querySelector("#closebutton").click();
 })(window, document);
 
