@@ -4,7 +4,18 @@ document.addEventListener("DOMContentLoaded",
         
               document.querySelector("#bell")
                       .addEventListener("click", function(event){
+
                           
+
+
+                          if (Notification.permission ==="denied"){
+
+                               document.querySelector("#notifbutton").click();
+
+
+                              }
+                          else{
+                              
         
            
 (function(w, d) {
@@ -23,7 +34,7 @@ document.addEventListener("DOMContentLoaded",
 })(window, document);
 
                       
-
+}
                           
                               
                               
