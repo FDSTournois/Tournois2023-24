@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded",
                       .addEventListener("click", function(event){
 
                           
-
+                              console.log( Notification.permission );
 
                           if (Notification.permission ==="denied"){
 
