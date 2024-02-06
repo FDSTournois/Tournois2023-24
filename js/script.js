@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded",
 
 
                               }
+                                else if (Notification.permission ==="granted"){
+
+                               document.querySelector("#notifbutton2").click();
+
+
+                              }
                           else{
                               
         
