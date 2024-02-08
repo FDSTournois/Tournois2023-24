@@ -1,4 +1,4 @@
-<script>
+
 (function(w, d) {
   w.PushEngage = w.PushEngage || [];
   w._peq = w._peq || [];
@@ -14,4 +14,4 @@
   e.type = 'text/javascript';
   d.head.appendChild(e);
 })(window, document);
-</script>
+
