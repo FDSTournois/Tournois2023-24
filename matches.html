@@ -9,8 +9,8 @@
         <link href="css/styles.css" rel="stylesheet">
            
     </head>
-    <body>
-        <nav class="sticky-top navbar navbar-expand-lg ">
+    <body ng-app="app">
+        <nav class="sticky-top navbar navbar-expand-lg " ng-controller="ctr">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html"> <img src="pictures/logo.jpg" alt="FDS TOURNOIS 2023-2024"  width ="65" height="65"></a>
 
@@ -38,20 +38,13 @@
               <div class="col-8" > <span class="fsize"> Player Names</span> </div>
              <div class="fsize2 col-8" >  Teams </div> 
               <li><hr class="dropdown-divider"></li>
+              
+               <div ng-repeat="item in buteurs">
               <li><hr class="dropdown-divider"></li>
-               <div class="offset-10 col-2 fsize"> 3</div>
-               <div class="col-8" ><span class="fsize">🥇Thanguy ST CYR  </span></div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-                        
-              <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 2</div>
-               <div class="col-8" ><span class="fsize">🥈Emmanuel PIERRE </span>  </div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-
-               <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 1</div>
-              <div class="col-8" ><span class="fsize"> 🥉 Jefferson</span> </div>
-             <div class="fsize2 col-8" >  TTF </div>
+               <div class="offset-10 col-2 fsize"> {{item.goal}}</div>
+               <div class="col-8" ><span class="fsize">{{item.name}}  </span></div>
+             <div class="fsize2 col-8" > {{item.team}} </div> 
+                 </div> 
               
              
               </div>
@@ -90,20 +83,13 @@
               <div class="col-8" ><span class="fsize"> Player Names</span> </div>
              <div class="fsize2 col-8" >  Teams </div> 
               <li><hr class="dropdown-divider"></li>
+              
+              <div ng-repeat="item in buteurs">
               <li><hr class="dropdown-divider"></li>
-               <div class="offset-10 col-2 fsize"> 3</div>
-               <div class="col-8" ><span class="fsize">🥇Thanguy ST CYR  </span></div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-                        
-              <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 2</div>
-               <div class="col-8" ><span class="fsize">🥈Emmanuel PIERRE </span>  </div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-
-               <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 1</div>
-              <div class="col-8" ><span class="fsize"> 🥉 Jefferson</span> </div>
-             <div class="fsize2 col-8" >  TTF </div>
+               <div class="offset-10 col-2 fsize"> {{item.goal}}</div>
+               <div class="col-8" ><span class="fsize">{{item.name}}  </span></div>
+             <div class="fsize2 col-8" > {{item.team}} </div> 
+                 </div> 
               
              
               </div>
@@ -172,98 +158,132 @@
 
 
         
-         <div class="holder container-fluid">
+         <div class="holder container-fluid" ng-controller="ctr">
              <h3 class="text-center"> Matches </h3>
+             Filtrer:<input type="text" ng-keyup= "search()" ng-model="teamName" placeholder=" Name of your team">
+             <!-- <button ng-click=" search()"> Search </button>  -->
+             
+              <div class="space"> </div>
+             <div ng-repeat= "item in matches | filter :teamName "> 
+                 {{item.phase}}<br>
+             
+             <div class="match-n col-md-6 row ">
+                 <div class=" text-center col-2 fsize2"> {{item.date}}<br> {{item.hours}} </div>   <!-- Heure de match-->
+                 <div class=" bl col-8">
+                     
+                     <div class="{{item.class1}}">{{item.team1}} </div>
+                     <div class="{{item.class2}}">{{item.team2}}</div>
+                 </div>
+                 <div class=" text-center col-2"> <span class="{{item.class1}}">{{item.goal1}}</span><br> <span class="{{item.class2}}" >{{item.goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->
+             
+             
+             
+             
+             
+             
+             
+             </div>
              <div class=" fsize  row">
                  <h6 class="date" ><hr>Round 1<hr></h6>
                  <h4>Groupe A</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> FT <br> - </div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[0].date}}<br> {{matchesGroup[0].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div>Inter FDS </div>
-                     <div class="lost">Los Galacticos</div>
+                     <div class="{{matchesGroup[0].class1}}">{{matchesGroup[0].team1}} </div>
+                     <div class="{{matchesGroup[0].class2}}">{{matchesGroup[0].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span>1</span><br> <span class="lost" >0</span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[0].class1}}">{{matchesGroup[0].goal1}}</span><br> <span class="{{matchesGroup[0].class2}}" >{{matchesGroup[0].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> FT <br> - </div>   <!-- Heure de match-->
+                 
+              <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[1].date}}<br> {{matchesGroup[1].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost" >Ad Lucem</div>
-                     <div >TTF </div>
+                     <div class="{{matchesGroup[1].class1}}">{{matchesGroup[1].team1}} </div>
+                     <div class="{{matchesGroup[1].class2}}">{{matchesGroup[1].team2}}</div>
                  </div>
-                    <div class=" text-center col-2">  <span class="lost" >0 </span><br> <span>2</span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[1].class1}}">{{matchesGroup[1].goal1}}</span><br> <span class="{{matchesGroup[1].class2}}" >{{matchesGroup[1].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->   
+               
 
 
                  
                <h4>Groupe B</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> FT <br>-</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[2].date}}<br> {{matchesGroup[2].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Barca  </div>
-                     <div class="lost1"> Triad </div>
+                     <div class="{{matchesGroup[2].class1}}">{{matchesGroup[2].team1}} </div>
+                     <div class="{{matchesGroup[2].class2}}">{{matchesGroup[2].team2}}</div>
                  </div>
-                 <div class=" text-center col-2">  <span class="lost1" > 1</span><br> <span class="lost1" > 1</span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[2].class1}}">{{matchesGroup[2].goal1}}</span><br> <span class="{{matchesGroup[2].class2}}" >{{matchesGroup[2].goal2}}</span>  </div>
                     
-              </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2">FT <br>-</div>   <!-- Heure de match-->
+              </div> <!-- end of div <match-n></match-n> --> 
+                 
+               <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[5].date}}<br> {{matchesGroup[5].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Black Boys </div>
-                     <div class="lost">Trip nap Trip </div>
+                     <div class="{{matchesGroup[5].class1}}">{{matchesGroup[5].team1}} </div>
+                     <div class="{{matchesGroup[5].class2}}">{{matchesGroup[5].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > 3</span><br> <span class="lost" > 0</span>   </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[5].class1}}">{{matchesGroup[5].goal1}}</span><br> <span class="{{matchesGroup[5].class2}}" >{{matchesGroup[5].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
 
 
              <h4>Groupe C</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> FT<br>-</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[3].date}}<br> {{matchesGroup[3].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost">Starting Five  </div>
-                     <div class="lost1">  Fc Excellence </div>
+                     <div class="{{matchesGroup[3].class1}}">{{matchesGroup[3].team1}} </div>
+                     <div class="{{matchesGroup[3].class2}}">{{matchesGroup[3].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost" >0</span><br> <span class="lost1" > 3 </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[3].class1}}">{{matchesGroup[3].goal1}}</span><br> <span class="{{matchesGroup[3].class2}}" >{{matchesGroup[3].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> FT <br>-</div>   <!-- Heure de match-->
+                 
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[4].date}}<br> {{matchesGroup[4].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Topo I </div>
-                     <div class="lost"> Backup </div>
+                     <div class="{{matchesGroup[4].class1}}">{{matchesGroup[4].team1}} </div>
+                     <div class="{{matchesGroup[4].class2}}">{{matchesGroup[4].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" >1 </span><br> <span class="lost" >0 </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[4].class1}}">{{matchesGroup[4].goal1}}</span><br> <span class="{{matchesGroup[4].class2}}" >{{matchesGroup[4].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
               
                  
                  
                  <h4>Groupe D</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br> -</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[9].date}}<br> {{matchesGroup[9].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Roi du ballon   </div>
-                     <div class="lost1">  Dan Bang  </div>
+                     <div class="{{matchesGroup[9].class1}}">{{matchesGroup[9].team1}} </div>
+                     <div class="{{matchesGroup[9].class2}}">{{matchesGroup[9].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[9].class1}}">{{matchesGroup[9].goal1}}</span><br> <span class="{{matchesGroup[9].class2}}" >{{matchesGroup[9].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br>-</div>   <!-- Heure de match-->
+                 
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[11].date}}<br> {{matchesGroup[11].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Super Ainé </div>
-                     <div class="lost1"> FC Calma </div>
+                     <div class="{{matchesGroup[11].class1}}">{{matchesGroup[11].team1}} </div>
+                     <div class="{{matchesGroup[11].class2}}">{{matchesGroup[11].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>   </div>
-              </div> <!-- end of div <match-n></match-n> --> 
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[11].class1}}">{{matchesGroup[11].goal1}}</span><br> <span class="{{matchesGroup[11].class2}}" >{{matchesGroup[11].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
 
 
 
@@ -271,92 +291,101 @@
 
              <h6 class="date" ><hr>Round 2<hr></h6>
                  <h4>Groupe A</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> FT <br> - </div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[6].date}}<br> {{matchesGroup[6].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost">Ad Lucem </div>
-                     <div class="lost1">Los Galacticos</div>
+                     <div class="{{matchesGroup[6].class1}}">{{matchesGroup[6].team1}} </div>
+                     <div class="{{matchesGroup[6].class2}}">{{matchesGroup[6].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost" >0</span><br> <span class="lost1" >7</span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[6].class1}}">{{matchesGroup[6].goal1}}</span><br> <span class="{{matchesGroup[6].class2}}" >{{matchesGroup[6].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br> - </div>   <!-- Heure de match-->
+                 
+              <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[7].date}}<br> {{matchesGroup[7].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Inter FDS</div>
-                     <div class="lost1">TTF </div>
+                     <div class="{{matchesGroup[7].class1}}">{{matchesGroup[7].team1}} </div>
+                     <div class="{{matchesGroup[7].class2}}">{{matchesGroup[7].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[7].class1}}">{{matchesGroup[7].goal1}}</span><br> <span class="{{matchesGroup[7].class2}}" >{{matchesGroup[7].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->   
+               
 
 
                  
                <h4>Groupe B</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br>-</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[8].date}}<br> {{matchesGroup[8].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Black Boys  </div>
-                     <div class="lost1"> Triad </div>
+                     <div class="{{matchesGroup[8].class1}}">{{matchesGroup[8].team1}} </div>
+                     <div class="{{matchesGroup[8].class2}}">{{matchesGroup[8].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[8].class1}}">{{matchesGroup[8].goal1}}</span><br> <span class="{{matchesGroup[8].class2}}" >{{matchesGroup[8].goal2}}</span>  </div>
                     
-              </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Feb 16 <br> 4:15 PM</div>   <!-- Heure de match-->
+              </div> <!-- end of div <match-n></match-n> --> 
+                 
+               <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[15].date}}<br> {{matchesGroup[15].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Barca  </div>
-                     <div class="lost1">Trip nap Trip </div>
+                     <div class="{{matchesGroup[15].class1}}">{{matchesGroup[15].team1}} </div>
+                     <div class="{{matchesGroup[15].class2}}">{{matchesGroup[15].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[15].class1}}">{{matchesGroup[15].goal1}}</span><br> <span class="{{matchesGroup[15].class2}}" >{{matchesGroup[15].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
 
 
              <h4>Groupe C</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br> -</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[10].date}}<br> {{matchesGroup[10].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Topo I </div>
-                     <div class="lost1">Fc Excellence  </div>
+                     <div class="{{matchesGroup[10].class1}}">{{matchesGroup[10].team1}} </div>
+                     <div class="{{matchesGroup[10].class2}}">{{matchesGroup[10].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[10].class1}}">{{matchesGroup[10].goal1}}</span><br> <span class="{{matchesGroup[10].class2}}" >{{matchesGroup[10].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Feb 16 <br> 2:45 PM</div>   <!-- Heure de match-->
+                 
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[13].date}}<br> {{matchesGroup[13].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Starting Five  </div>
-                     <div class="lost1">  Backup </div>
+                     <div class="{{matchesGroup[13].class1}}">{{matchesGroup[13].team1}} </div>
+                     <div class="{{matchesGroup[13].class2}}">{{matchesGroup[13].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>   </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[13].class1}}">{{matchesGroup[13].goal1}}</span><br> <span class="{{matchesGroup[13].class2}}" >{{matchesGroup[13].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
               
                  
                  
                  <h4>Groupe D</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Feb 16<br> 3:30 PM</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[14].date}}<br> {{matchesGroup[14].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Roi du ballon   </div>
-                     <div class="lost1">  FC Calma </div>
+                     <div class="{{matchesGroup[14].class1}}">{{matchesGroup[14].team1}} </div>
+                     <div class="{{matchesGroup[14].class2}}">{{matchesGroup[14].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[14].class1}}">{{matchesGroup[14].goal1}}</span><br> <span class="{{matchesGroup[14].class2}}" >{{matchesGroup[14].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Feb 24 <br> 1:00 PM</div>   <!-- Heure de match-->
+                 
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[21].date}}<br> {{matchesGroup[21].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Super Ainé </div>
-                     <div class="lost1">Dan Bang FC </div>
+                     <div class="{{matchesGroup[21].class1}}">{{matchesGroup[21].team1}} </div>
+                     <div class="{{matchesGroup[21].class2}}">{{matchesGroup[21].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>   </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[21].class1}}">{{matchesGroup[21].goal1}}</span><br> <span class="{{matchesGroup[21].class2}}" >{{matchesGroup[21].goal2}}</span>  </div>
+                    
               </div> <!-- end of div <match-n></match-n> --> 
 
 
@@ -365,109 +394,105 @@
 
 
               <h6 class="date" ><hr>Round 3<hr></h6>
-                 <h4>Groupe A</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Feb 16 <br> 2:00 PM </div>   <!-- Heure de match-->
+                <h4>Groupe A</h4>
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[12].date}}<br> {{matchesGroup[12].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Ad Lucem </div>
-                     <div class="lost1">Inter FDS </div>
+                     <div class="{{matchesGroup[12].class1}}">{{matchesGroup[12].team1}} </div>
+                     <div class="{{matchesGroup[12].class2}}">{{matchesGroup[12].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[12].class1}}">{{matchesGroup[12].goal1}}</span><br> <span class="{{matchesGroup[12].class2}}" >{{matchesGroup[12].goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Feb 17 <br> 1:00 PM </div>   <!-- Heure de match-->
+                 
+              <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[16].date}}<br> {{matchesGroup[16].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Los Galacticos </div>
-                     <div class="lost1">TTF </div>
+                     <div class="{{matchesGroup[16].class1}}">{{matchesGroup[16].team1}} </div>
+                     <div class="{{matchesGroup[16].class2}}">{{matchesGroup[16].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[16].class1}}">{{matchesGroup[16].goal1}}</span><br> <span class="{{matchesGroup[16].class2}}" >{{matchesGroup[16].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->   
+               
 
 
                  
                <h4>Groupe B</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Feb 23 <br> 2:00 PM</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[17].date}}<br> {{matchesGroup[17].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Black Boys  </div>
-                     <div class="lost1">  Barca </div>
+                     <div class="{{matchesGroup[17].class1}}">{{matchesGroup[17].team1}} </div>
+                     <div class="{{matchesGroup[17].class2}}">{{matchesGroup[17].team2}}</div>
                  </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[17].class1}}">{{matchesGroup[17].goal1}}</span><br> <span class="{{matchesGroup[17].class2}}" >{{matchesGroup[17].goal2}}</span>  </div>
                     
-              </div> <!-- end of div <match-n></match-n> -->
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Feb 23 <br> 4:15 PM</div>   <!-- Heure de match-->
+              </div> <!-- end of div <match-n></match-n> --> 
+                 
+               <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[20].date}}<br> {{matchesGroup[20].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Triad  </div>
-                     <div class="lost1">Trip nap Trip </div>
+                     <div class="{{matchesGroup[20].class1}}">{{matchesGroup[20].team1}} </div>
+                     <div class="{{matchesGroup[20].class2}}">{{matchesGroup[20].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[20].class1}}">{{matchesGroup[20].goal1}}</span><br> <span class="{{matchesGroup[20].class2}}" >{{matchesGroup[20].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
 
 
              <h4>Groupe C</h4>
-               
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Feb 23 <br> 2:45 PM</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[18].date}}<br> {{matchesGroup[18].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Backup  </div>
-                     <div class="lost1">Fc Excellence  </div>
+                     <div class="{{matchesGroup[18].class1}}">{{matchesGroup[18].team1}} </div>
+                     <div class="{{matchesGroup[18].class2}}">{{matchesGroup[18].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
-              <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Feb 23 <br> 3:30 PM</div>   <!-- Heure de match-->
-                 <div class=" bl col-8">
-                     
-                     <div class="lost1">Starting Five  </div>
-                     <div class="lost1">  Topo I </div>
-                 </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[18].class1}}">{{matchesGroup[18].goal1}}</span><br> <span class="{{matchesGroup[18].class2}}" >{{matchesGroup[18].goal2}}</span>  </div>
                     
-              </div> <!-- end of div <match-n></match-n> -->   
+              </div> <!-- end of div <match-n></match-n> -->
+                 
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[19].date}}<br> {{matchesGroup[19].hours}} </div>   <!-- Heure de match-->
+                 <div class=" bl col-8">
+                     
+                     <div class="{{matchesGroup[19].class1}}">{{matchesGroup[19].team1}} </div>
+                     <div class="{{matchesGroup[19].class2}}">{{matchesGroup[19].team2}}</div>
+                 </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[19].class1}}">{{matchesGroup[19].goal1}}</span><br> <span class="{{matchesGroup[19].class2}}" >{{matchesGroup[19].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
               
                  
                  
                  <h4>Groupe D</h4>
-                
-               <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> March 1st <br> 2:45 PM</div>   <!-- Heure de match-->
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[22].date}}<br> {{matchesGroup[22].hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Fc Calma </div>
-                     <div class="lost1">Dan Bang FC </div>
+                     <div class="{{matchesGroup[22].class1}}">{{matchesGroup[22].team1}} </div>
+                     <div class="{{matchesGroup[22].class2}}">{{matchesGroup[22].team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
-              <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> March 1st<br> 3:30 PM</div>   <!-- Heure de match-->
-                 <div class=" bl col-8">
-                     
-                     <div class="lost1">Roi du ballon   </div>
-                     <div class="lost1"> Super Ainé</div>
-                 </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[22].class1}}">{{matchesGroup[22].goal1}}</span><br> <span class="{{matchesGroup[22].class2}}" >{{matchesGroup[22].goal2}}</span>  </div>
                     
-              </div> <!-- end of div <match-n></match-n> -->   
-                     
-              <div class="space"> </div>
-
+              </div> <!-- end of div <match-n></match-n> -->
                  
-             </div>   
+                <div class="match-n col-md-6 row " >
+                 <div class=" text-center col-2 fsize2"> {{matchesGroup[23].date}}<br> {{matchesGroup[23].hours}} </div>   <!-- Heure de match-->
+                 <div class=" bl col-8">
+                     
+                     <div class="{{matchesGroup[23].class1}}">{{matchesGroup[23].team1}} </div>
+                     <div class="{{matchesGroup[23].class2}}">{{matchesGroup[23].team2}}</div>
+                 </div>
+                 <div class=" text-center col-2"> <span class="{{matchesGroup[23].class1}}">{{matchesGroup[23].goal1}}</span><br> <span class="{{matchesGroup[23].class2}}" >{{matchesGroup[23].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> --> 
 
-             
-
-
-             
-         </div><!-- end of <div.container-fluid holder Matches >     --> 
-
-
+                <div class="space"> </div>
 
         
 
@@ -501,6 +526,7 @@
           <hr class=" d-sm-none">
              
              </div>
+             
         
         </section>     
      
@@ -518,7 +544,8 @@
 
 
         
-        <script src="js/bootstrap.bundle.min.js">  </script>  
+        <script src="js/bootstrap.bundle.min.js">  </script>
+         <script src="js/angular.min.js">  </script>
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
         
         <script src="js/script.js">  </script>  
