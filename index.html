@@ -9,8 +9,8 @@
         <link href="css/styles.css" rel="stylesheet">
            
     </head>
-    <body id="top">
-        <nav  class="sticky-top navbar navbar-expand-lg ">
+    <body id="top" ng-app="app">
+        <nav  class="sticky-top navbar navbar-expand-lg "  ng-controller="ctr">
   <div class="container-fluid">
       
     <a class="navbar-brand" href="index.html"> <img src="pictures/logo.jpg" alt="FDS TOURNOIS 2023-2024"  width ="65" height="65"></a>
@@ -45,20 +45,13 @@
               <div class="col-8" > <span class="fsize"> Player Names</span> </div>
              <div class="fsize2 col-8" >  Teams </div> 
               <li><hr class="dropdown-divider"></li>
+              
+               <div ng-repeat="item in buteurs">
               <li><hr class="dropdown-divider"></li>
-               <div class="offset-10 col-2 fsize"> 3</div>
-               <div class="col-8" ><span class="fsize">🥇Thanguy ST CYR  </span></div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-                        
-              <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 2</div>
-               <div class="col-8" ><span class="fsize">🥈Emmanuel PIERRE </span>  </div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-
-               <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 1</div>
-              <div class="col-8" ><span class="fsize"> 🥉 Jefferson</span> </div>
-             <div class="fsize2 col-8" >  TTF </div>
+               <div class="offset-10 col-2 fsize"> {{item.goal}}</div>
+               <div class="col-8" ><span class="fsize">{{item.name}}  </span></div>
+             <div class="fsize2 col-8" > {{item.team}} </div> 
+                 </div> 
               
              
               </div>
@@ -98,20 +91,14 @@
               <div class="col-8" ><span class="fsize"> Player Names</span> </div>
              <div class="fsize2 col-8" >  Teams </div> 
                 <li><hr class="dropdown-divider"></li>
+              
+              <div ng-repeat="item in buteurs">
               <li><hr class="dropdown-divider"></li>
-               <div class="offset-10 col-2 fsize"> 3</div>
-               <div class="col-8" ><span class="fsize">🥇Thanguy ST CYR  </span></div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
+               <div class="offset-10 col-2 fsize"> {{item.goal}}</div>
+               <div class="col-8" ><span class="fsize">{{item.name}}  </span></div>
+             <div class="fsize2 col-8" > {{item.team}} </div> 
+                 </div> 
                         
-              <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 2</div>
-               <div class="col-8" ><span class="fsize">🥈Emmanuel PIERRE </span>  </div>
-             <div class="fsize2 col-8" >  Los GALACTICOS </div> 
-
-               <li><hr class="dropdown-divider"></li>
-              <div class="offset-10 col-2 fsize"> 1</div>
-              <div class="col-8" ><span class="fsize"> 🥉 Jefferson</span> </div>
-             <div class="fsize2 col-8" >  TTF </div>
               
              
               </div>
@@ -226,61 +213,25 @@ L'équipe TRIP NAP TRIP qui criait "N ap bat,n ap bat" avant le lancement du mat
          </div>  <!-- end of <div.container-fluid carousel>     --> 
 
 
-        
+         
        
-         <div id="Matches" class="holder container-fluid">
+         <div id="Matches" class="holder container-fluid" ng-controller="ctr">
              <h3 class="text-center"> Next Matches  </h3>
+             
              <div class=" fsize  row">
-
-                     <h4>Groupe A</h4>
-                  <div class="match-n row col-md-6 ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br> - </div>   <!-- Heure de match-->
+                  <hr>
+                 <div class="match-n  row "  ng-repeat= "item in matchesGroup | filter : 'Feb 16' ">
+                 <div class=" text-center col-2 fsize2"> {{item.date}}<br> {{item.hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
-                     <div class="lost1">Inter FDS</div>
-                     <div class="lost1">TTF </div>
+                     <div class="{{item.class1}}">{{item.team1}} </div>
+                     <div class="{{item.class2}}">{{item.team2}}</div>
                  </div>
-                    <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-              </div> <!-- end of div <match-n></match-n> -->
-
-
-                 
-               <h4>Groupe B</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br>-</div>   <!-- Heure de match-->
-                 <div class=" bl col-8">
-                     
-                     <div class="lost1">Black Boys  </div>
-                     <div class="lost1"> Triad </div>
-                 </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
+                 <div class=" text-center col-2"> <span class="{{item.class1}}">{{item.goal1}}</span><br> <span class="{{item.class2}}" >{{item.goal2}}</span>  </div>
                     
               </div> <!-- end of div <match-n></match-n> -->
 
-                
-                 <h4>Groupe D</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br> -</div>   <!-- Heure de match-->
-                 <div class=" bl col-8">
-                     
-                     <div class="lost1">Roi du ballon   </div>
-                     <div class="lost1">  Dan Bang  </div>
-                 </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-                    
-              </div> <!-- end of div <match-n></match-n> -->
-                  
-              <h4>Groupe C</h4>
-                <div class="match-n col-md-6 row ">
-                 <div class=" text-center col-2 fsize2"> Reporté <br> -</div>   <!-- Heure de match-->
-                 <div class=" bl col-8">
-                     
-                     <div class="lost1">Topo I </div>
-                     <div class="lost1">Fc Excellence  </div>
-                 </div>
-                 <div class=" text-center col-2"> <span class="lost1" > </span><br> <span class="lost1" > </span>  </div>
-                    
-              </div> <!-- end of div <match-n></match-n> -->
+                   
                   
                 
 
@@ -840,11 +791,8 @@ L'équipe TRIP NAP TRIP qui criait "N ap bat,n ap bat" avant le lancement du mat
 
         
         <script src="js/bootstrap.bundle.min.js">  </script>  
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
-
-
-             
-        
+         <script src="js/angular.min.js">  </script>
+    
         
         <script src="js/script.js">  </script>  
     </body>
