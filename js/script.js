@@ -128,17 +128,7 @@ function fctr($scope){
                         phase:"Match 2"
                      
                        },
-                 {  team1: "TTF",
-                       team2: "Inter FDS",
-                       date : "Feb 17",
-                       hours: "12:00 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match 2"
-                     
-                       },
+                
                  {  team1: "Triad",
                        team2: "Black Boys",
                        date : "Feb 16",
@@ -150,21 +140,10 @@ function fctr($scope){
                         phase:"Match 2"
                      
                        },
-                 {  team1: "Backup",
-                       team2: "Starting Five",
-                       date : "Feb 16",
-                       hours: "1:45 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match 2"
-                     
-                       },
-                 {  team1: "Roi du ballon",
+                {  team1: "Roi du ballon",
                        team2: "Dan Bang",
                        date : "Feb 16",
-                       hours: "2:30 PM",
+                       hours: "1:45 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -172,21 +151,10 @@ function fctr($scope){
                        phase:"Match 1"
                      
                        },
-                 {  team1: "Fc Excellence",
-                       team2: "Topo I",
-                       date : "Reporté",
-                       hours: "-",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                   phase:"Match 2"
-                     
-                       },
-                      {   team1: "Barca",
-                       team2: "Trip nap Trip",
+                 {  team1: "Backup",
+                       team2: "Starting Five",
                        date : "Feb 16",
-                       hours: "3:15 PM",
+                       hours: "2:30 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -197,7 +165,7 @@ function fctr($scope){
                  {  team1: "Super Ainé",
                        team2: "FC Calma",
                        date : "Feb 16",
-                       hours: "4:00 PM",
+                       hours: "3:15 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -205,22 +173,10 @@ function fctr($scope){
                        phase:"Match 1"
                      
                        },
-                 {  team1: "Ad Lucem",
-                       team2: "Inter FDS",
-                       date : "Feb 23",
-                       hours: "2:00 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match3"
-                     
-                       },
-                
-               {   team1: "Roi du Ballon",
-                       team2: "FC Calma",
-                       date : "Feb 23",
-                       hours: "3:30 PM",
+                 {   team1: "Barca",
+                       team2: "Trip nap Trip",
+                       date : "Feb 16",
+                       hours: "4:00 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -228,6 +184,67 @@ function fctr($scope){
                         phase:"Match 2"
                      
                        },
+                 {  team1: "TTF",
+                       team2: "Inter FDS",
+                       date : "Feb 17",
+                       hours: "12:00 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 2"
+                     
+                       },
+                 
+                 {  team1: "Fc Excellence",
+                       team2: "Topo I",
+                       date : "Feb 23",
+                       hours: "1:00 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                   phase:"Match 2"
+                     
+                       },
+               
+                     
+                 {   team1: "Roi du Ballon",
+                       team2: "FC Calma",
+                       date : "Feb 23",
+                       hours: "1:45 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 2"
+                     
+                       },
+                 
+                 {  team1: "Ad Lucem",
+                       team2: "Inter FDS",
+                       date : "Feb 23",
+                       hours: "2:30 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match3"
+                     
+                       },
+                 {   team1: "Dan Bang FC",
+                       team2: "Super Ainé",
+                       date : "Feb 23",
+                       hours: "3:15 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 2"
+                     
+                       },
+                
+              
                 
                  {   team1: "TTF",
                        team2: "Los Galacticos",
@@ -240,10 +257,21 @@ function fctr($scope){
                         phase:"Match 3"
                      
                        },
+                 {      team1: "Backup",
+                       team2: "Fc Excellence",
+                       date : "March 1st",
+                       hours: "1:00 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 3"
+                     
+                       },
                  {   team1: "Black Boys",
                        team2: "Barca",
-                       date : "Feb 23",
-                       hours: "2:00 PM",
+                       date : "March 1st",
+                       hours: "1:45 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -252,21 +280,11 @@ function fctr($scope){
                      
                        },
                     
-                    {      team1: "Backup",
-                       team2: "Fc Excellence",
-                       date : "Feb 23",
-                       hours: "2:45 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match 3"
-                     
-                       },
+                   
                  {   team1: "Topo I",
                        team2: "Starting Five",
-                       date : "Feb 23",
-                       hours: "3:30 PM",
+                       date : "March 1st",
+                       hours: "2:30 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -274,43 +292,34 @@ function fctr($scope){
                          phase:"Match 3"
                      
                        },
-                {   team1: "Trip nap Trip",
-                       team2: "Triad",
-                       date : "Feb 23",
-                       hours: "4:15 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match 3"
-                     
-                       },
-                {   team1: "Dan Bang FC",
-                       team2: "Super Ainé",
-                       date : "March 1st",
-                       hours: "1:00 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match 2"
-                     
-                       },
-                  {   team1: "Fc Calma",
-                       team2: "Dan bang FC",
-                       date : "March 1st",
-                       hours: "2:45 PM",
-                       class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
-                        phase:"Match 3"
-                     
-                       },
                  {   team1: "Super Ainé",
                        team2: "Roi du ballon",
                        date : "March 1st",
-                       hours: "3:30 PM",
+                       hours: "3:15 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 3"
+                     
+                       },
+                
+                {   team1: "Trip nap Trip",
+                       team2: "Triad",
+                       date : "March 1st",
+                       hours: "4:00 PM",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 3"
+                     
+                       },
+               
+                  {   team1: "Fc Calma",
+                       team2: "Dan bang FC",
+                       date : "March 2",
+                       hours: "1:00 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
@@ -318,7 +327,6 @@ function fctr($scope){
                         phase:"Match 3"
                      
                        }
-                
                 
                    
                    
