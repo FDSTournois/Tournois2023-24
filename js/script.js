@@ -165,11 +165,11 @@ function fctr($scope){
                  {  team1: "Super Ainé",
                        team2: "FC Calma",
                        date : "Feb 20",
-                       hours: "3:15 PM",
+                       hours: "FT",
                        class1: "lost1",
-                       class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
+                       class2: "lost",
+                       goal1 : "2",
+                       goal2 : "1",
                        phase:"Match 1"
                      
                        },
