@@ -249,7 +249,7 @@ function fctr($scope){
                  {   team1: "TTF",
                        team2: "Los Galacticos",
                        date : "Feb 26",
-                       hours: "1:00 PM",
+                       hours: "3:00 PM",
                        class1: "lost1",
                        class2: "lost1",
                        goal1 : "",
