@@ -111,7 +111,7 @@ h4{
    border: 5px outset black;
    /* margin:10px; */
    margin-bottom:20px;
-   height: 7em;
+   height: 10em;
    font-size:1em;
     
     }
@@ -140,16 +140,32 @@ h4{
     }
 .knockoutspace2{
       
-      margin-top:14em;
+      margin-top:18em;
     
       margin-bottom:0px;
        margin-right:0px;
        margin-left:0px;
     }
-/* #idKnockout{
+#Knockout{
 
-     margin:-15px;
-    } */
+    padding:0px;
+    
+      margin-top:20px;
+    
+      margin-bottom:0px;
+       margin-right:0px;
+       margin-left:0px;
+    }
+#idKnockout{
+
+    padding:0px;
+    
+       margin:0px;
+    }
+#huitieme{
+    margin-left:10px;
+
+    }
 
 #foot{
     background-color:#222;
