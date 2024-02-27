@@ -121,6 +121,7 @@ h4{
    height: 10em;
    font-size:1em;
     
+    
     }
 .noPad{
      padding:0px;
@@ -155,7 +156,7 @@ h4{
     }
 #Knockout{
 
-    padding:0px;
+    padding-left:10px;
     
       margin-top:20px;
     
@@ -169,8 +170,13 @@ h4{
     
        margin:0px;
     }
+.classKnockout{
+    margin:0px;
+    padding:0px;
+
+    }
 #huitieme{
-    margin-left:10px;
+    padding-left:5px;
 
     }
 
