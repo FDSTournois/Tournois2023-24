@@ -109,10 +109,17 @@ h4{
     }
 .knockoutline{
    border: 5px outset black;
-   margin:10px;
+   /* margin:10px; */
+   margin-bottom:20px;
    height: 7em;
    font-size:1em;
     
+    }
+.noPad{
+     padding:0px;
+    }
+.noPad1{
+     padding-left:1.5px;
     }
 
 .knockoutlinev{
@@ -126,11 +133,24 @@ h4{
 .knockoutspace{
       
       margin-top:6em;
+      margin-bottom:0px;
+       margin-right:0px;
+       margin-left:0px;
+    
     }
 .knockoutspace2{
       
       margin-top:14em;
+    
+      margin-bottom:0px;
+       margin-right:0px;
+       margin-left:0px;
     }
+/* #idKnockout{
+
+     margin:-15px;
+    } */
+
 #foot{
     background-color:#222;
     padding:0px;
