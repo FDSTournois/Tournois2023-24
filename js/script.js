@@ -252,8 +252,8 @@ function fctr($scope){
                        hours: "FT",
                        class1: "lost",
                        class2: "lost1",
-                       goal1 : "3",
-                       goal2 : "0",
+                       goal1 : "0",
+                       goal2 : "3",
                         phase:"Match 3"
                      
                        },
