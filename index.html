@@ -227,7 +227,7 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
              
              <div class=" fsize  row">
                   <hr>
-                 <div class="match-n  row "  ng-repeat= "item in matchesGroup | filter : 'Feb 26' ">
+                 <div class="match-n  row "  ng-repeat= "item in matchesGroup | filter : 'March 1' ">
                  <div class=" text-center col-2 fsize2"> {{item.date}}<br> {{item.hours}} </div>   <!-- Heure de match-->
                  <div class=" bl col-8">
                      
@@ -292,24 +292,23 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
                      Points
                  </div> 
                </div> <!-- end of div <match-n></match-n> --> 
-
-                  <div class="match-n  row text-center ">
+                 
+                   <div class="match-n  row text-center ">
                  <div class=" col-2"> 1 </div>
-                 <div class="  col-4"> TTF </div>   <!-- Heure de match-->
+                 <div class="  col-4"> Los GALACTICOS </div>   <!-- Heure de match-->
                  <div class=" text-center  col-2">
-                     2
+                     3
                  </div>
                  <div class="  col-2">
-                     +2
+                     +9
                  </div>
                  <div class="  col-2">
                      6
                  </div> 
-                </div> <!-- end of div <match-n></match-n> -->
-                
+                </div> <!-- end of div <match-n></match-n> --> 
                   <hr>
 
-                   <div class="match-n  row text-center ">
+                 <div class="match-n  row text-center ">
                  <div class=" col-2"> 2 </div>
                  <div class="  col-4"> INTER FDS </div>   <!-- Heure de match-->
                  <div class=" text-center  col-2">
@@ -324,27 +323,23 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
                 </div> <!-- end of div <match-n></match-n> --> 
                 
                  <hr>
-                 
 
-               
-              
-                  <div class="match-n  row text-center ">
+                  <div class="match-n lost  row text-center ">
                  <div class=" col-2"> 3 </div>
-                 <div class="  col-4"> Los GALACTICOS </div>   <!-- Heure de match-->
+                 <div class="  col-4"> TTF </div>   <!-- Heure de match-->
                  <div class=" text-center  col-2">
-                     2
-                 </div>
-                 <div class="  col-2">
-                     +6
-                 </div>
-                 <div class="  col-2">
                      3
+                 </div>
+                 <div class="  col-2">
+                     -1
+                 </div>
+                 <div class="  col-2">
+                     6
                  </div> 
-                </div> <!-- end of div <match-n></match-n> --> 
-                  <hr>
-              
-                  
-                  <div class="match-n  row text-center ">
+                </div> <!-- end of div <match-n></match-n> -->
+            
+            <hr>      
+                  <div class="match-n lost row text-center ">
                  <div class=" col-2"> 4 </div>
                  <div class="  col-4">AD LUCEM</div>   <!-- Heure de match-->
                  <div class=" text-center  col-2">
@@ -361,6 +356,7 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
               
                 
               <div class="space"> </div>
+                  <div class="text-center fsize"> Dans le cas où deux (ou plus) équipes ont un nombre égal de points, les règles suivantes rompent l'égalité: 1. Différence de buts 2.Confrontation directe  3. Buts marqués</div>
                  
              </div>   
 
@@ -452,6 +448,7 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
               
                 
               <div class="space"> </div>
+                  <div class="text-center fsize"> Dans le cas où deux (ou plus) équipes ont un nombre égal de points, les règles suivantes rompent l'égalité: 1. Différence de buts 2.Confrontation directe  3. Buts marqués</div>
              
                  
              </div>   
@@ -543,6 +540,7 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
               
                 
               <div class="space"> </div>
+                  <div class="text-center fsize"> Dans le cas où deux (ou plus) équipes ont un nombre égal de points, les règles suivantes rompent l'égalité: 1. Différence de buts 2.Confrontation directe  3. Buts marqués</div>
              
                  
              </div>   
@@ -637,6 +635,7 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
               
                 
               <div class="space"> </div>
+                    <div class="text-center fsize"> Dans le cas où deux (ou plus) équipes ont un nombre égal de points, les règles suivantes rompent l'égalité: 1. Différence de buts 2.Confrontation directe  3. Buts marqués</div>
              
                  
              </div>   
@@ -672,101 +671,122 @@ Pas de bol pour l'équipe ayant le plus de marraines, une seconde défaite pour 
         
 
         <!-- Knockout -->
-         <div id="Knockout" class="holder container-fluid tex-center">
+         <div id="Knockout" class="holder container-fluid tex-center" ng-controller="ctr">
              <h3 class="text-center"> Knockout</h3>
              <div class=" fsize2  row">
 
-                 
-                <div class="match-n col-4 row ">
-                    <div class=" knockoutline row"> <!--line -->
-                
-                 <div class="  col-8">
-                     
-                     <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> - </div>   <!-- Heure de match-->
-              </div> <!-- end of the line-->  
-
-               <div class="knockoutline  row"> <!--line -->
-                
-                 <div class="  col-8">
-                     
-                    <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> - </div>   <!-- Heure de match-->
-              </div> <!-- end of the line--> 
-               <div class="knockoutline row"> <!--line -->
-                
-                 <div class=" col-8">
-                     
-                     <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> - </div>   <!-- Heure de match-->
-              </div> <!-- end of the line--> 
-               <div class="knockoutline row"> <!--line -->
-                
-                 <div class=" col-8">
-                     
-                     <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> - </div>   <!-- Heure de match-->
-              </div> <!-- end of the line-->       
-              </div> <!-- end of div <match-n></match-n> -->
-
-
-
-                 
-               <div class="match-n col-4 row ">
-                    <div class=" knockoutspace knockoutline row"> <!--line -->
-                
-                 <div class="  col-8">
-                     
-                   <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> - </div>   <!-- Heure de match-->
-              </div> <!-- end of the line-->  
-
-               <div class="knockoutline knockoutspace row"> <!--line -->
-                
-                 <div class="  col-8">
-                     
-                    <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> - </div>   <!-- Heure de match-->
-              </div> <!-- end of the line--> 
-                     
-              </div> <!-- end of div <match-n></match-n> -->
-
-
-                 
-                
-              <div class="match-n col-4 row ">
-                 
-                    <div class=" knockoutline knockoutspace2 row"> <!--line -->
-                
-                 <div class="  col-8">
-                     
-                     <div>-</div>
-                     <div>-</div>
-                 </div>
-                <div class=" text-center col-2"> -</div>   <!-- Heure de match-->
-              </div> <!-- end of the line-->  
+                 <!-- start of huitieme de final -->
+                <div class="match-n col-4  row ">
 
                     
-              </div> <!-- end of div <match-n></match-n> -->   
+                    <div class="row noPad knockoutline " >
+                    <div  class="text-center noPad"> Quart de Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[24].date}}<br> {{matchesGroup[24].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[24].class1}}">{{matchesGroup[24].team1}} </div>
+                     <div class="{{matchesGroup[24].class2}}">{{matchesGroup[24].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[24].class1}}">{{matchesGroup[24].goal1}}</span><br> <span class="{{matchesGroup[24].class2}}" >{{matchesGroup[24].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> --> 
+                    
+
+                <div class="row noPad knockoutline " >
+                    <div  class="text-center noPad"> Quart de Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[25].date}}<br> {{matchesGroup[25].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[25].class1}}">{{matchesGroup[25].team1}} </div>
+                     <div class="{{matchesGroup[25].class2}}">{{matchesGroup[25].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[25].class1}}">{{matchesGroup[25].goal1}}</span><br> <span class="{{matchesGroup[25].class2}}" >{{matchesGroup[25].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> --> 
+                    
+                <div class="row noPad knockoutline " >
+                    <div  class="text-center noPad"> Quart de Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[26].date}}<br> {{matchesGroup[26].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[26].class1}}">{{matchesGroup[26].team1}} </div>
+                     <div class="{{matchesGroup[26].class2}}">{{matchesGroup[26].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[26].class1}}">{{matchesGroup[26].goal1}}</span><br> <span class="{{matchesGroup[26].class2}}" >{{matchesGroup[26].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> --> 
+                    
+                <div class="row noPad knockoutline " >
+                    <div  class="text-center noPad"> Quart de Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[27].date}}<br> {{matchesGroup[27].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[27].class1}}">{{matchesGroup[27].team1}} </div>
+                     <div class="{{matchesGroup[27].class2}}">{{matchesGroup[27].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[27].class1}}">{{matchesGroup[27].goal1}}</span><br> <span class="{{matchesGroup[27].class2}}" >{{matchesGroup[27].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> --> 
+                    
+              </div>   <!-- end of huitieme de final -->
+
+
+                 <!-- start of half final -->
+               <div class="match-n col-4 row ">
+
+                   
+ <div class="row noPad knockoutline knockoutspace" >
+                    <div  class="text-center noPad"> Demi Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[-2].date}}<br> {{matchesGroup[-2].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[2].class1}}">{{matchesGroup[-2].team1}} </div>
+                     <div class="{{matchesGroup[2].class2}}">{{matchesGroup[-2].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[2].class1}}">{{matchesGroup[-2].goal1}}</span><br> <span class="{{matchesGroup[2].class2}}" >{{matchesGroup[-2].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> --> 
+
+                <div class="row noPad knockoutline knockoutspace" >
+                    <div  class="text-center noPad"> Demi Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[-2].date}}<br> {{matchesGroup[-2].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[2].class1}}">{{matchesGroup[-2].team1}} </div>
+                     <div class="{{matchesGroup[2].class2}}">{{matchesGroup[-2].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[2].class1}}">{{matchesGroup[-2].goal1}}</span><br> <span class="{{matchesGroup[2].class2}}" >{{matchesGroup[-2].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
+                     
+              </div>   <!-- end of half final -->
+
+
+
+                 
+                 <!-- Start ofFinal -->  
+              <div class="match-n col-4 row ">
+                 
+               <div class="row noPad knockoutline knockoutspace2" >
+                    <div  class="text-center noPad"> Final</div>
+                 <div class="noPad text-center col-3 fsize21"> {{matchesGroup[-2].date}}<br> {{matchesGroup[-2].hours}} </div>   <!-- Heure de match-->
+                 <div class=" noPad1 bl col-8">
+                     
+                     <div class="{{matchesGroup[2].class1}}">{{matchesGroup[-2].team1}} </div>
+                     <div class="{{matchesGroup[2].class2}}">{{matchesGroup[-2].team2}}</div>
+                 </div>
+                 <div class=" noPad text-center col-1"> <span class="{{matchesGroup[2].class1}}">{{matchesGroup[-2].goal1}}</span><br> <span class="{{matchesGroup[2].class2}}" >{{matchesGroup[-2].goal2}}</span>  </div>
+                    
+              </div> <!-- end of div <match-n></match-n> -->  
+
+                    
+              </div> <!-- end ofFinal -->   
               
                  
               <div class="space"> </div>
               
                  
              </div>   
-
              
 
 
