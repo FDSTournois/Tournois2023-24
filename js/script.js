@@ -224,7 +224,7 @@ function fctr($scope){
                  {  team1: "Ad Lucem",
                        team2: "Inter FDS",
                        date : "Feb 23",
-                       hours: "FT",
+                       hours: "Forfait",
                        class1: "lost",
                        class2: "lost1",
                        goal1 : "0",
@@ -249,11 +249,11 @@ function fctr($scope){
                  {   team1: "TTF",
                        team2: "Los Galacticos",
                        date : "Feb 26",
-                       hours: "3:00 PM",
-                       class1: "lost1",
+                       hours: "FT",
+                       class1: "lost",
                        class2: "lost1",
-                       goal1 : "",
-                       goal2 : "",
+                       goal1 : "3",
+                       goal2 : "0",
                         phase:"Match 3"
                      
                        },
@@ -326,7 +326,61 @@ function fctr($scope){
                        goal2 : "",
                         phase:"Match 3"
                      
+                       },
+                
+                  { 
+                       no:"24",
+                       team1: "Los Galacticos",
+                       team2: "2e Groupe B",
+                       date : "",
+                       hours: "",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 4"
+                     
+                       },
+                 { 
+                       no:"25",
+                       team1: "1er Groupe C",
+                       team2: "2e Groupe D",
+                       date : "",
+                       hours: "",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 4"
+                     
+                       },
+                 { 
+                       no:"26",
+                       team1: "1er Groupe B",
+                       team2: "INTER FDS",
+                       date : "",
+                       hours: "",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 4"
+                     
+                       },
+                 { 
+                       no:"27",
+                       team1: "1er Groupe D",
+                       team2: "2e Groupe C",
+                       date : "",
+                       hours: "",
+                       class1: "lost1",
+                       class2: "lost1",
+                       goal1 : "",
+                       goal2 : "",
+                        phase:"Match 4"
+                     
                        }
+                
                 
                    
                    
@@ -339,15 +393,16 @@ function fctr($scope){
 
      $scope.buteurs = [
 
-         { goal: "3",
+         { goal: "4",
             name: "Thanguy ST CYR",
+            team: "Los GALACTICOS"},
+          { goal: "3",
+            name: "Emmanuel PIERRE",
             team: "Los GALACTICOS"},
           { goal: "2",
             name: "Berry Gerome",
             team: "Backup"},
-          { goal: "2",
-            name: "Emmanuel PIERRE",
-            team: "Los GALACTICOS"}
+         
          
 
 
